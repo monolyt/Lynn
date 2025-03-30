@@ -18,11 +18,11 @@
     </style>
 </head>
 
-<body>
+<body {% if site.background-image %} style="background-image: url({{ site.background-image }})" {% endif %}>
     <div class="container">
         <div class="card">
             <header class="card__header">
-                LYNN
+                <span class="card__header__logo">{{site.title}}</span>
                 <a href="#">Email me</a>
             </header>
             <section class="card__image">

@@ -1,10 +1,11 @@
 url: "https://www.klara-theme.netlify.app"
-title: Lynn
+title: LYNN
 description: >-
     Description of this page.
 
 # Choose color-theme
 color-theme: color #bw, color
+background-image: "" # Path to background-image
 
 # Socials
 social:
