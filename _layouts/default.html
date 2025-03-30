@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% if page.title %}{{ page.title }} | {{ site.title }}
+        {% else %}{{ site.title }}{% endif %}
+    </title>
+
+    <style>
+        {% capture include_to_scssify %}
+          {% include inline.scss %}
+        {% endcapture %}
+        {{ include_to_scssify | scssify }}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <header class="card__header">
+                LYNN
+                <a href="#">Email me</a>
+            </header>
+            <section class="card__image">
+                <img src="https://images.pexels.com/photos/10553312/pexels-photo-10553312.jpeg">
+            </section>
+            <section class="card__links">
+                {% for link in site.data.links %}
+                  <div class="card__item">
+                    <a href="{{ link.url }}" {% if link.openInNewTab %} target="_blank" {% endif %}>{{ link.title }}</a>
+                  </div>
+                {% endfor %}
+              </section>
+
+        </div>
+    </div>
+</body>
+
+</html>

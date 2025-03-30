@@ -1,0 +1,34 @@
+url: "https://www.klara-theme.netlify.app"
+title: Lynn
+description: >-
+    Description of this page.
+
+# Choose color-theme
+color-theme: color #bw, color
+
+# Socials
+social:
+  name: "LYNN"
+  links:
+    - "https://mastodon.com/yourhandle"
+    - "https://github.com/yourhandle"
+
+# Add Plugins
+plugins:
+  - webrick
+  - jekyll-sitemap
+  - jekyll-gzip
+
+# Clean Code Output
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+sass:
+  style: compressed
+
+# Exclude from Build
+exclude:
+  - .jekyll-cache
+
+# Define Collections
+permalink: pretty

@@ -1,0 +1,141 @@
+/* Orange #ffaf01 Blue #0051FF*/
+
+
+/* ===== Selection Styling ===== */
+::selection,
+::-moz-selection {
+    background-color: var(--color-selection);
+    color: var(--color-background);
+}
+
+/* ===== Baseline Styles ===== */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-optical-sizing: auto;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+    width: 100vw;
+    height: 100vh;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: "UncutSans", monospace, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--color-card);
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.card__image,
+.card__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    /* text-align: right; */
+    padding-bottom: 0.5rem;
+}
+
+.card__header a,
+.card__item a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.card__header,
+.card__image {
+    border-bottom: 2px solid var(--color-text);
+}
+
+.card__image img {
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.card__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-text);
+}
+
+.card__item a {
+    font-weight: 500;
+}
+
+.card__item a[target="_blank"]::after {
+    content: " ↗"
+}
+
+/* Mobile-first: For mobile devices */
+.card {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    /* Remove rounded corners on mobile */
+}
+
+/* Desktop styles */
+@media (min-width: 600px) {
+    body {
+        font-size: 25px;
+    }
+
+    .container {
+        height: 100vh;
+    }
+
+    .card {
+        width: var(--card-width);
+        height: calc(100vh - 6rem);
+        /* Full height minus 3rem on top and bottom */
+        margin: 3rem 0;
+        border-radius: 1.5rem;
+        /* Keep rounded corners on desktop */
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        font-size: 36px;
+    }
+
+    .card {
+        width: calc(var(--card-width)*1.5);
+    }
+}
