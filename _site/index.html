@@ -20,71 +20,69 @@
         <div class="card">
             <header class="card__header">
                 <span class="card__header__logo">LYNNs</span>
-                <a href="mailto:yourmailhere@protonmail.com">Email me</a>
+                <a href="yourmailhere@protonmail.com"></a>
             </header>
             <section class="card__carousel">
-  <div class="carousel__wrapper">
-     
-    <img src="https://images.pexels.com/photos/10553312/pexels-photo-10553312.jpeg?cs=srgb&dl=pexels-zsofia-feher-685822-10553312.jpg&fm=jpg&w=1280&h=862" alt="Image from URL" class="carousel__image">
-     
-    <img src="assets/pexels-radis-22690992.jpg" alt="Local image from path" class="carousel__image">
-     
-    <div class="carousel__arrow">→</div>
-  </div>
-</section>
-            <section class="card__text">
-                LYNN is a Berlin-based producer crafting dark ambient electro and experimental soundscapes.
+                <div class="carousel__wrapper">
+                    
+                    <img src="https://images.pexels.com/photos/10553312/pexels-photo-10553312.jpeg?cs=srgb&dl=pexels-zsofia-feher-685822-10553312.jpg&fm=jpg&w=1280&h=862" alt="Image from URL" class="carousel__image">
+                    
+                    <img src="assets/pexels-radis-22690992.jpg" alt="Local image from path" class="carousel__image">
+                    
+                    <div class="carousel__arrow">→</div>
+                </div>
             </section>
+            
             <section class="card__links">
                 
-                  <div class="card__item">
+                <div class="card__item">
                     <a href="#"  target="_blank" >Latest Tracks</a>
-                  </div>
+                </div>
                 
-                  <div class="card__item">
+                <div class="card__item">
                     <a href="#"  target="_blank" >SoundCloud</a>
-                  </div>
+                </div>
                 
-                  <div class="card__item">
+                <div class="card__item">
                     <a href="#"  target="_blank" >Bandcamp</a>
-                  </div>
+                </div>
                 
-                  <div class="card__item">
+                <div class="card__item">
                     <a href="#"  target="_blank" >Live Sets</a>
-                  </div>
+                </div>
                 
-                  <div class="card__item">
+                <div class="card__item">
                     <a href="#"  target="_blank" >Booking</a>
-                  </div>
+                </div>
                 
-              </section>
+            </section>
 
         </div>
     </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.carousel__wrapper');
-  const images = carousel.querySelectorAll('.carousel__image');
-  const arrow = carousel.querySelector('.carousel__arrow');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel__wrapper');
+            const images = carousel.querySelectorAll('.carousel__image');
+            const arrow = carousel.querySelector('.carousel__arrow');
 
-  if (images.length === 0) return;
+            if (images.length === 0) return;
 
-  // Set first image as active initially
-  images[0].classList.add('active');
+            // Set first image as active initially
+            images[0].classList.add('active');
 
-  if (images.length <= 1) return;
+            if (images.length <= 1) return;
 
-  let currentIndex = 0;
+            let currentIndex = 0;
 
-  function nextImage() {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
-  }
+            function nextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
 
-  carousel.addEventListener('click', nextImage);
-});
-</script>
+            carousel.addEventListener('click', nextImage);
+        });
+    </script>
 </body>
 
 </html>
