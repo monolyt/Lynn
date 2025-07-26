@@ -12,7 +12,7 @@ background-image: ""    # Optional background image path
 plugins:
   - webrick
   - jekyll-sitemap
-# - jekyll-gzip
+  - jekyll-gzip
 
 # Clean Code Output
 compress_html:
