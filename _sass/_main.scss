@@ -1,7 +1,17 @@
-/* Orange #ffaf01 Blue #0051FF*/
-
+/*!
+ * LYNN - A Simple Digital Identity Kit
+ * A simple, self-hosted alternative to Linktree
+ *
+ * Author: Daniel Barleben
+ * Repository: https://github.com/monolyt
+ * License: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
+ *
+ * Copyright (c) 2025 Monolyt
+ */
 
 /* ===== Selection Styling ===== */
+
+/* Custom styling for text selection highlight */
 ::selection,
 ::-moz-selection {
     background-color: var(--color-selection);
@@ -9,6 +19,8 @@
 }
 
 /* ===== Baseline Styles ===== */
+
+/* Reset all margins, padding and set consistent box-sizing */
 *,
 :after,
 :before {
@@ -17,12 +29,14 @@
     padding: 0;
 }
 
+/* Base HTML and body setup - full height and default font */
 body,
 html {
     height: 100%;
     font-family: Arial, sans-serif;
 }
 
+/* Main body typography and visual settings */
 body {
     font-optical-sizing: auto;
     font-size: 22px;
@@ -39,12 +53,14 @@ body {
     height: 100%;
 }
 
+/* Override font-family with custom font from theme variables */
 body,
 html {
     height: 100%;
     font-family: var(--fontstring);
 }
 
+/* Main container - centers the card vertically and horizontally */
 .container {
     display: flex;
     justify-content: center;
@@ -53,12 +69,14 @@ html {
     width: 100%;
 }
 
+/* Main card container with scrollable content */
 .card {
     background-color: var(--color-card);
     padding: 1rem;
     overflow-y: scroll;
 }
 
+/* Consistent vertical spacing for main content sections */
 .card__text,
 .card__carousel,
 .card__item {
@@ -66,6 +84,7 @@ html {
     padding-bottom: 1rem;
 }
 
+/* Header with title and email - flexbox layout for space between elements */
 .card__header {
     display: flex;
     justify-content: space-between;
@@ -73,10 +92,12 @@ html {
     padding-bottom: 0.5rem;
 }
 
+/* Bio text - slightly smaller than base font size */
 .card__text {
     font-size: 0.85em;
 }
 
+/* Remove default link styling and use theme colors */
 .card__text a,
 .card__header a,
 .card__item a {
@@ -84,21 +105,25 @@ html {
     color: var(--color-text);
 }
 
+/* Border separators for header and carousel sections */
 .card__header,
 .card__carousel {
     border-bottom: var(--border);
 }
 
+/* Legacy carousel image styling - kept for compatibility */
 .card__carousel img {
     width: 100%;
     border-radius: var(--border-radius);
 }
 
+/* Carousel wrapper - relative positioning for absolute arrow placement */
 .carousel__wrapper {
     position: relative;
     width: 100%;
 }
 
+/* Individual carousel images - hidden by default */
 .carousel__image {
     width: 100%;
     aspect-ratio: var(--image-aspect-ratio);
@@ -107,10 +132,12 @@ html {
     display: none;
 }
 
+/* Active image state - visible image in carousel */
 .carousel__image.active {
     display: block;
 }
 
+/* Carousel navigation arrow - positioned top-right with smooth opacity transition */
 .carousel__arrow {
     position: absolute;
     top: 1rem;
@@ -126,6 +153,7 @@ html {
     transition: opacity 0.2s;
 }
 
+/* Link items and bio text with bottom borders (except last item) */
 .card__item,
 .card__text {
     padding-top: 1rem;
@@ -133,19 +161,23 @@ html {
     border-bottom: var(--border);
 }
 
+/* Remove border from the last link item */
 .card__item:last-child {
     border-bottom: none;
 }
 
+/* Medium font weight for link text */
 .card__item a {
     font-weight: 500;
 }
 
+/* External link indicator - adds arrow symbol after links that open in new tab */
 .card__item a[target="_blank"]::after {
     content: " ↗"
 }
 
-/* Mobile-first: For mobile devices */
+/* ===== MOBILE STYLES (Default) ===== */
+/* Mobile-first: Full viewport card with no rounded corners */
 .card {
     width: 100vw;
     height: 100vh;
@@ -153,12 +185,17 @@ html {
     border-radius: 0;
 }
 
+/* Show carousel arrow on mobile when multiple images exist */
 .carousel__wrapper:has(.carousel__image:nth-child(2)) .carousel__arrow {
     opacity: 1;
 }
 
-/* Desktop styles */
+/* ===== DESKTOP STYLES ===== */
+
+/* Desktop styles - larger font, background image support, constrained card */
 @media (min-width: 600px) {
+
+    /* Larger base font size and background image styling */
     body {
         font-size: 25px;
         background-size: cover;
@@ -166,10 +203,12 @@ html {
         background-repeat: no-repeat;
     }
 
+    /* Container takes full viewport height */
     .container {
         height: 100vh;
     }
 
+    /* Constrained card with rounded corners and height limits */
     .card {
         width: var(--card-width);
         height: auto;
@@ -179,21 +218,28 @@ html {
         border-radius: 1.5rem;
     }
 
+    /* Hide carousel arrow by default on desktop */
     .carousel__wrapper:has(.carousel__image:nth-child(2)) .carousel__arrow {
         opacity: 0;
     }
 
+    /* Show carousel arrow on hover for desktop */
     .carousel__wrapper:has(.carousel__image:nth-child(2)):hover .carousel__arrow {
         opacity: 1;
     }
-
 }
 
+/* ===== LARGE DESKTOP STYLES ===== */
+
+/* Extra large screens - bigger font and wider card */
 @media (min-width: 2000px) {
+
+    /* Even larger font size for very wide screens */
     body {
         font-size: 36px;
     }
 
+    /* Proportionally larger card width */
     .card {
         width: calc(var(--card-width)*1.5);
     }
