@@ -25,8 +25,16 @@
                 <span class="card__header__logo">{{site.title}}</span>
                 <a href="#">Email me</a>
             </header>
-            <section class="card__image">
-                <img src="https://images.pexels.com/photos/10553312/pexels-photo-10553312.jpeg">
+            <section class="card__carousel">
+  <div class="carousel__wrapper">
+     {% for image in site.data.images %}
+    <img src="{{ image.path }}" alt="{{ image.description }}" class="carousel__image">
+     {% endfor %}
+    <div class="carousel__arrow">→</div>
+  </div>
+</section>
+            <section class="card__text">
+                LYNN is a Berlin-based producer crafting dark ambient electro and experimental soundscapes.
             </section>
             <section class="card__links">
                 {% for link in site.data.links %}
@@ -38,6 +46,30 @@
 
         </div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel__wrapper');
+  const images = carousel.querySelectorAll('.carousel__image');
+  const arrow = carousel.querySelector('.carousel__arrow');
+
+  if (images.length === 0) return;
+
+  // Set first image as active initially
+  images[0].classList.add('active');
+
+  if (images.length <= 1) return;
+
+  let currentIndex = 0;
+
+  function nextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+  }
+
+  carousel.addEventListener('click', nextImage);
+});
+</script>
 </body>
 
 </html>

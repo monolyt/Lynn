@@ -41,7 +41,7 @@ body {
 body,
 html {
     height: 100%;
-    font-family: "UncutSans", monospace, sans-serif;
+    font-family: var(--fontstring);
 }
 
 .container {
@@ -58,7 +58,8 @@ html {
     overflow-y: scroll;
 }
 
-.card__image,
+.card__text,
+.card__carousel,
 .card__item {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -71,6 +72,11 @@ html {
     padding-bottom: 0.5rem;
 }
 
+.card__text {
+    font-size: 0.85em;
+}
+
+.card__text a,
 .card__header a,
 .card__item a {
     text-decoration: none;
@@ -78,19 +84,52 @@ html {
 }
 
 .card__header,
-.card__image {
-    border-bottom: 2px solid var(--color-text);
+.card__carousel {
+    border-bottom: var(--border);
 }
 
-.card__image img {
+.card__carousel img {
     width: 100%;
-    border-radius: 1.5rem;
+    border-radius: var(--border-radius);
 }
 
-.card__item {
+.carousel__wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel__image {
+    width: 100%;
+    aspect-ratio: var(--image-aspect-ratio);
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    display: none;
+}
+
+.carousel__image.active {
+    display: block;
+}
+
+.carousel__arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--color-text);
+    cursor: pointer;
+    background-color: var(--color-card);
+    padding: 0.5rem;
+    border-radius: calc(var(--border-radius)/3);
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card__item,
+.card__text {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--color-text);
+    border-bottom: var(--border);
 }
 
 .card__item:last-child {
@@ -111,7 +150,10 @@ html {
     height: 100vh;
     margin: 0;
     border-radius: 0;
-    /* Remove rounded corners on mobile */
+}
+
+.carousel__wrapper:has(.carousel__image:nth-child(2)) .carousel__arrow {
+    opacity: 1;
 }
 
 /* Desktop styles */
@@ -135,6 +177,15 @@ html {
         margin: 3rem 0;
         border-radius: 1.5rem;
     }
+
+    .carousel__wrapper:has(.carousel__image:nth-child(2)) .carousel__arrow {
+        opacity: 0;
+    }
+
+    .carousel__wrapper:has(.carousel__image:nth-child(2)):hover .carousel__arrow {
+        opacity: 1;
+    }
+
 }
 
 @media (min-width: 2000px) {

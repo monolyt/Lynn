@@ -1,7 +1,12 @@
 :root {
     --color-text: #0f0f0f;
     --color-background: #f0f0f0;
+    --color-border: #0f0f0f;
     --color-card: #ffaf01;
     --color-selection: #0051FF;
     --card-width: 480px;
+    --border: 2px solid var(--color-border);
+    --border-radius: 1.5rem;
+    --fontstring: "UncutSans", monospace, sans-serif;
+    --image-aspect-ratio: 3 / 2;
 }
