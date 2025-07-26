@@ -11,5 +11,5 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do
   gem 'webrick'
   gem 'jekyll-sitemap'
-  gem 'jekyll-gzip'
+  # gem 'jekyll-gzip'
 end
