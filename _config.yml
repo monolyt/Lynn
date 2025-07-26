@@ -5,7 +5,7 @@ description: >-
     Lynn is a Cologne-based producer crafting dark ambient electro and experimental soundscapes.
 mail_text: "Email me"   # Link text for you email address
 mail: "mailto:your@email.com"  # Your email address
-color-theme: bw      # Choose "color", "bw" or create your own theme
+color-theme: color     # Choose "color", "bw" or create your own theme
 background-image: ""    # Optional background image path
 
 # Add Plugins
