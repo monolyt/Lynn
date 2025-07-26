@@ -2,17 +2,11 @@ url: "https://www.klara-theme.netlify.app"
 title: LYNN
 description: >-
     Description of this page.
+mail: "yourmailhere@protonmail.com"
 
 # Choose color-theme
 color-theme: color #bw, color
 background-image: "" # Path to background-image
-
-# Socials
-social:
-  name: "LYNN"
-  links:
-    - "https://mastodon.com/yourhandle"
-    - "https://github.com/yourhandle"
 
 # Add Plugins
 plugins:
